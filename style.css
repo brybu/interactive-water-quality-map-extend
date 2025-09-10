@@ -1,0 +1,63 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+#map {
+  height: 100vh;
+  width: 100vw;
+}
+
+#msg {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  background: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font: 13px system-ui, sans-serif;
+  z-index: 9999;
+  box-shadow: 0 0 6px rgba(0,0,0,0.2);
+}
+
+#filters {
+  position: fixed;
+  top: 8px;
+  right: 8px;
+  background: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  font: 13px Arial, sans-serif;
+  z-index: 1000;
+}
+
+.legend {
+  background: #fff;
+  padding: 8px 12px;
+  line-height: 18px;
+  border-radius: 6px;
+  font: 12px/14px Arial, sans-serif;
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  border: 1px solid #ccc;
+  max-width: 180px;
+}
+.legend h4 {
+  margin: 0 0 6px;
+  font-size: 13px;
+}
+.legend i {
+  width: 14px;
+  height: 14px;
+  float: left;
+  margin-right: 6px;
+  opacity: 0.8;
+}
+.legend .chem {
+  font-size: 11px;
+  margin-top: 6px;
+  color: #333;
+}

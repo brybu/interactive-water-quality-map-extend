@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Interactive Water Quality Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- Critical inline CSS so the map always shows -->
+  <style>
+    html, body { height: 100%; margin: 0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100vw; }
+    #msg {
+      position: fixed; top: 8px; left: 8px; background: #fff; padding: 6px 10px;
+      border: 1px solid #ddd; border-radius: 8px; font: 13px system-ui, sans-serif;
+      z-index: 9999; box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+    #filters {
+      position: fixed; top: 8px; right: 8px; background: #fff; padding: 6px 10px;
+      border: 1px solid #ccc; border-radius: 6px; box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      font: 13px Arial, sans-serif; z-index: 1000; display: none; /* hidden until we load choices */
+    }
+    #filters label { margin-right: 4px; }
+    #filters select { margin-right: 6px; }
+    .legend {
+      background: #fff; padding: 8px 12px; line-height: 18px; border-radius: 6px;
+      font: 12px/14px Arial, sans-serif; box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      border: 1px solid #ccc; max-width: 200px;
+    }
+    .legend h4 { margin: 0 0 6px; font-size: 13px; }
+    .legend i { width: 14px; height: 14px; float: left; margin-right: 6px; opacity: .8; }
+    .legend .chem { font-size: 11px; margin-top: 6px; color: #333; }
+  </style>
+</head>
+<body>
+  <div id="msg">Loading…</div>
+  <div id="filters">
+    <label for="yearSelect">Year:</label>
+    <select id="yearSelect"><option value="">All</option></select>
+    <label for="monthSelect">Month:</label>
+    <select id="monthSelect"><option value="">All</option></select>
+    <button id="applyFilters">Apply</button>
+    <button id="resetFilters">Reset</button>
+  </div>
+  <div id="map"></div>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  <script src="./config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
