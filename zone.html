@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Zone Comparison Map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #map {
+      height: 100%;
+      width: 100%;
+    }
+    #msg {
+      position: fixed;
+      top: 8px; left: 8px;
+      background: #fff;
+      padding: 6px 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font: 13px system-ui, sans-serif;
+      z-index: 9999;
+      box-shadow: 0 0 6px rgba(0,0,0,0.2);
+    }
+    .legend {
+      background: white;
+      padding: 8px;
+      border-radius: 6px;
+      line-height: 18px;
+      font-size: 12px;
+      box-shadow: 0 0 6px rgba(0,0,0,0.3);
+      border: 1px solid #ccc;
+    }
+    .legend h4 {
+      margin: 0 0 6px;
+      font-size: 13px;
+    }
+    .legend i {
+      width: 14px; height: 14px;
+      float: left; margin-right: 6px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div id="msg">Loading zones…</div>
+  <div id="map"></div>
+
+  <!-- Libraries -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Config: your Supabase URL + anon key -->
+  <script src="./config.js"></script>
+
+  <!-- App logic -->
+  <script src="./app_zone.js"></script>
+</body>
+</html>
